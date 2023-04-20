@@ -1,8 +1,24 @@
 import Navbar from "@/components/Navbar";
 import Content from "@/components/Content";
+import Head from "next/head";
 export default function Home() {
   return (
     <>
+      <Head>
+        <title>
+          OnlyNudes Bot - Experience Limitless NSFW Possibilities with
+          OnlyNudes, the Best Bot on Discord
+        </title>
+        <meta
+          name="description"
+          content="With OnlyNudes, you can explore limitless NSFW possibilities that offer a unique and immersive experience like no other."
+        />
+        <link
+          rel="shortcut icon"
+          href="/assets/onlynudes-logo-small.png"
+          type="image/png"
+        />
+      </Head>
       <Navbar />
       <Content />
       <video
