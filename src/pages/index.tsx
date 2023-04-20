@@ -27,6 +27,7 @@ export default function Home() {
         autoPlay
         muted
         loop
+        playsInline
         src="/assets/main.mp4"
       ></video>
     </>
