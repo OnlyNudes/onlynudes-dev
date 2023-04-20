@@ -14,7 +14,17 @@ module.exports = {
       },
       colors: {
         main: "#EB559E"
-      }
+      },
+      screens: {
+        "2xl": { max: "1535px" },
+        xl: { max: "1279px" },
+        lg: { max: "1023px" },
+        av: { max: "920px" },
+        md: { max: "767px" },
+        sm: { max: "685px" },
+        xsm: { max: "400px" },
+        "2xs": { max: "364px" },
+      },
     },
   },
   plugins: [],
