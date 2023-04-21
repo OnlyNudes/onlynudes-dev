@@ -1,7 +1,12 @@
 import Navbar from "@/components/Navbar";
 import Content from "@/components/Content";
 import Head from "next/head";
+import { useEffect, useRef } from "react";
 export default function Home() {
+  const videoEl = useRef<HTMLVideoElement>(null);
+  useEffect(() => {
+    videoEl.current?.play();
+  }, []);
   return (
     <>
       <Head>
@@ -22,6 +27,7 @@ export default function Home() {
       <Navbar />
       <Content />
       <video
+        ref={videoEl}
         className="bg-video"
         controls={false}
         autoPlay
