@@ -3,8 +3,10 @@ import axios, { AxiosResponse } from "axios";
 import type { RadioChangeEvent } from "antd";
 import { Radio, ConfigProvider } from "antd";
 import Head from "next/head";
+import Image from "next/image";
 import { useRouter } from "next/router";
 import Recaptcha from "@/components/ReCAPTCHA";
+import { addListener, launch } from "devtools-detector";
 export default function Report() {
   const router = useRouter();
   const { channelid, messageid, url } = router.query;
@@ -139,9 +141,11 @@ export default function Report() {
           </div>
         ) : (
           <div className="bg-zinc-800  rounded-3xl p-5 flex flex-col items-center justify-center">
-            <img
+            <Image
               src="https://cdn.discordapp.com/attachments/1089602865250713742/1103416004819812445/D2hSiLdto5.gif"
               alt="Onlynudes Character"
+              width={300}
+              height={300}
             />
             <h2 className="text-white text-3xl text-center mt-5 font-bold">
               Successfully Reported
