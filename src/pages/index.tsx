@@ -23,6 +23,11 @@ export default function Home() {
           href="/assets/onlynudes-logo-small.png"
           type="image/png"
         />
+        <link
+          rel="shortcut icon"
+          href="/assets/onlynudes-logo-small.png"
+          type="image/png"
+        />
       </Head>
       <Navbar />
       <Content />
