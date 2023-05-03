@@ -84,7 +84,7 @@ export default function Report() {
                   className="flex flex-col "
                 >
                   <Radio value={"personal"} className="text-white">
-                    I don't like this image
+                    I don&apos;t like this image
                   </Radio>
                   <Radio value={"ad-content"} className="text-white">
                     Image contains advertising
@@ -99,7 +99,7 @@ export default function Report() {
                     Wrong category
                   </Radio>
                   <Radio value={"custom"} className="text-white">
-                    Other, check and write below
+                    Other&comma; check and write below
                   </Radio>
                 </Radio.Group>
               </ConfigProvider>
