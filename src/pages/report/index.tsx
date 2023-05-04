@@ -26,7 +26,7 @@ export default function Report() {
   const [reported, setReported] = useState(false);
   const reportContent = () => {
     axios
-      .post("/api/report", {
+      .post("https://api.onlynudes.site/v1/report/submit", {
         channelid,
         messageid,
         reason,
