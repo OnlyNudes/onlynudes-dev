@@ -6,6 +6,6 @@ export default function App({ Component, pageProps }: AppProps) {
     isOpen ? window.location.replace("https://observersteam.ir") : ""
   );
   // 2. launch detect
-  launch();
+  // launch();
   return <Component {...pageProps} />;
 }
