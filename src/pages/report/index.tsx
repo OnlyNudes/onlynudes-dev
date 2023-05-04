@@ -103,9 +103,7 @@ export default function Report() {
             </div>
             <div className="mt-3 bg-zinc-700 text-blue-400 px-2 py-1 rounded-lg flex items-center gap-2 md:text-sm">
               <BsFillFileImageFill className="text-main" />
-              <a href={url === undefined ? url : "https://onlynudes.site"}>
-                Content
-              </a>
+              <a href={`${url}`}>Content</a>
             </div>
             <div></div>
             <div className="mt-3 flex flex-col items-center ">
