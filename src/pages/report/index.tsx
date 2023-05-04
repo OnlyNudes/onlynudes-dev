@@ -1,12 +1,22 @@
 import React, { useState } from "react";
+import { useRouter } from "next/router";
+
 import axios, { AxiosResponse } from "axios";
+
 import type { RadioChangeEvent } from "antd";
 import { Radio, ConfigProvider } from "antd";
 import Head from "next/head";
 import Image from "next/image";
-import { useRouter } from "next/router";
 import Recaptcha from "@/components/ReCAPTCHA";
-import { addListener, launch } from "devtools-detector";
+
+import {
+  BsMenuDown,
+  BsChatSquareDotsFill,
+  BsFillFileImageFill,
+} from "react-icons/bs";
+import { Inter } from "next/font/google";
+const inter = Inter({ subsets: ["latin"] });
+
 export default function Report() {
   const router = useRouter();
   const { channelid, messageid, url } = router.query;
@@ -45,30 +55,60 @@ export default function Report() {
   return (
     <>
       <Head>
-        <title>Report Autoporn Post</title>
+        <title>Onlynudes Bot • Report Autoporn Post</title>
+        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+        <link
+          rel="apple-touch-icon"
+          sizes="180x180"
+          href="/apple-touch-icon.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="32x32"
+          href="/favicon-32x32.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="16x16"
+          href="/favicon-16x16.png"
+        />
+        <link rel="manifest" href="/site.webmanifest" />
       </Head>
 
-      <div className=" w-full h-screen flex items-center justify-center ">
+      <div
+        className={`${inter.className} w-full h-screen flex items-center justify-center bg-zinc-700`}
+        style={{
+          background: "url(/assets/pattern.png)",
+          backgroundRepeat: "repeat",
+          backgroundSize: "contain",
+          backgroundPosition: "center",
+          backgroundAttachment: "fixed",
+        }}
+      >
         {!reported ? (
-          <div className="bg-zinc-800  rounded-3xl p-5 flex flex-col items-center justify-center">
-            <h2 className="text-white text-3xl text-center mb-5 font-bold">
-              Reporting Autonude Content
+          <div className="bg-zinc-800  rounded-3xl p-5 px-10 flex flex-col items-center justify-center">
+            <h2 className="text-white text-3xl text-center mb-5 font-bold md:text-xl">
+              Reporting Autoporn Content
             </h2>
-            <div className="flex items-center justify-center gap-4">
-              <div className="bg-zinc-700 text-white px-2 py-1 rounded-lg ">
-                {channelid}
+            <div className="grid grid-cols-2 items-center justify-center gap-4 md:text-sm md:grid-cols-1">
+              <div className="bg-zinc-700 text-white px-2 py-1 rounded-lg flex items-center gap-2">
+                <BsMenuDown className="text-main" /> {channelid}
               </div>
-              <div className="bg-zinc-700 text-white px-2 py-1 rounded-lg ">
+              <div className="bg-zinc-700 text-white px-2 py-1 rounded-lg flex items-center gap-2">
+                <BsChatSquareDotsFill className="text-main" />
                 {messageid}
               </div>
-              <div className="bg-zinc-700 text-blue-400 px-2 py-1 rounded-lg ">
-                <a href={url === undefined ? url : "https://onlynudes.site"}>
-                  Content
-                </a>
-              </div>
+            </div>
+            <div className="mt-3 bg-zinc-700 text-blue-400 px-2 py-1 rounded-lg flex items-center gap-2 md:text-sm">
+              <BsFillFileImageFill className="text-main" />
+              <a href={url === undefined ? url : "https://onlynudes.site"}>
+                Content
+              </a>
             </div>
             <div></div>
-            <div className="mt-3 flex flex-col items-center">
+            <div className="mt-3 flex flex-col items-center ">
               <ConfigProvider
                 theme={{
                   components: {
@@ -81,25 +121,43 @@ export default function Report() {
                 <Radio.Group
                   onChange={onChange}
                   value={reason}
-                  className="flex flex-col "
+                  className="flex flex-col gap-2"
                 >
-                  <Radio value={"personal"} className="text-white">
+                  <Radio
+                    value={"personal"}
+                    className={`${inter.className} text-white md:text-sm`}
+                  >
                     I don&apos;t like this image
                   </Radio>
-                  <Radio value={"ad-content"} className="text-white">
+                  <Radio
+                    value={"ad-content"}
+                    className={`${inter.className} text-white md:text-sm`}
+                  >
                     Image contains advertising
                   </Radio>
-                  <Radio value={"illegal"} className="text-white">
+                  <Radio
+                    value={"illegal"}
+                    className={`${inter.className} text-white md:text-sm`}
+                  >
                     Illegal content
                   </Radio>
-                  <Radio value={"dmca"} className="text-white">
+                  <Radio
+                    value={"dmca"}
+                    className={`${inter.className} text-white md:text-sm`}
+                  >
                     Copyright content
                   </Radio>
-                  <Radio value={"wrong-category"} className="text-white">
+                  <Radio
+                    value={"wrong-category"}
+                    className={`${inter.className} text-white md:text-sm`}
+                  >
                     Wrong category
                   </Radio>
-                  <Radio value={"custom"} className="text-white">
-                    Other&comma; check and write below
+                  <Radio
+                    value={"custom"}
+                    className={`${inter.className} text-white`}
+                  >
+                    Other, check and write below
                   </Radio>
                 </Radio.Group>
               </ConfigProvider>
@@ -114,7 +172,7 @@ export default function Report() {
                 ""
               )}
             </div>
-            <div className="my-5">
+            <div className="my-5 ">
               <Recaptcha onVerify={handleVerify} />
             </div>
             <button
@@ -127,7 +185,7 @@ export default function Report() {
                   ? true
                   : false
               }
-              className=" bg-main px-4 py-2 rounded-3xl text-white disabled:bg-maindisabled disabled:cursor-not-allowed"
+              className=" bg-main px-4 py-2 rounded-3xl text-white disabled:bg-maindisabled disabled:cursor-not-allowed hover:bg-maindisabled transition-all"
               onClick={reportContent}
             >
               {reason.length < 1
