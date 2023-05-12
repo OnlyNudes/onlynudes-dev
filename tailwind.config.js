@@ -11,6 +11,7 @@ module.exports = {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic':
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+        "gradient-best": "linear-gradient(147deg, rgba(255,135,195,1) 0%, rgba(255,38,166,1) 100%)"
       },
       colors: {
         main: "#EB559E",

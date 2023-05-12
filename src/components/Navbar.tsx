@@ -6,6 +6,7 @@ import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { BsDiscord } from "react-icons/bs";
+import Link from "next/link";
 
 const dancing_script = Dancing_Script({ subsets: ["latin"] });
 const inter = Inter({ subsets: ["latin"] });
@@ -36,16 +37,18 @@ export default function Navbar() {
         className={`h-16 flex items-center sm:hidden justify-between gap-2 p-5 py-10 bg-black bg-opacity-80 backdrop-blur-lg z-50`}
       >
         <div className="h-16 flex items-center gap-5">
-          <Image
-            className="h-full w-auto"
-            src={OnlynudesLogo}
-            alt="Onlynudes Logo - The Onlynudes logo"
-          />
-          <h2
-            className={`text-2xl text-main ${dancing_script.className} logo-text`}
-          >
-            Onlynudes
-          </h2>
+          <Link href={"/"} className="h-16 flex items-center gap-5">
+            <Image
+              className="h-full w-auto"
+              src={OnlynudesLogo}
+              alt="Onlynudes Logo - The Onlynudes logo"
+            />
+            <h2
+              className={`text-2xl text-main ${dancing_script.className} logo-text`}
+            >
+              Onlynudes
+            </h2>
+          </Link>
           <button
             className={`text-white ${inter.className}`}
             onClick={() =>
@@ -68,6 +71,9 @@ export default function Navbar() {
           >
             Docs
           </a>
+          <Link href="/pricing" className={`text-pink-400 ${inter.className}`}>
+            API Pricing
+          </Link>
         </div>
         <div>
           <button

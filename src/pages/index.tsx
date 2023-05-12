@@ -16,7 +16,7 @@ export default function Home() {
         </title>
         <meta
           name="description"
-          content="With OnlyNudes, you can explore limitless NSFW possibilities that offer a unique and immersive experience like no other."
+          content="As the most popular bot in the Discord community, OnlyNudes offers unlimited access to the hottest porn and nude content from top sites like Pornhub and Pornpics. And with seamless integration into your Discord server, accessing your favorite content has never been easier! Whether you're a seasoned pro or new to the world of NSFW, our AI-powered bot is sure to exceed your expectations."
         />
         <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
         <link
