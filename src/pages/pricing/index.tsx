@@ -116,7 +116,7 @@ export default function Pricing() {
         </div>
         <div className={`w-full mt-5 ${inter.className}`}>
           <h2 className="text-white text-center flex items-center justify-center gap-2">
-            Are you interested in purchasing our API plan? Let's chat on{" "}
+            Are you interested in purchasing our API plan? Let&apos;s chat on{" "}
             <a
               href="https://discord.gg/onlynudesbot"
               className="flex items-center justify-center gap-1"
