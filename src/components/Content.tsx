@@ -1,7 +1,7 @@
 import { Inter } from "next/font/google";
 const inter = Inter({ subsets: ["latin"] });
 import { BsDiscord } from "react-icons/bs";
-
+import Image from "next/image";
 export default function Content() {
   const handleClick = (link: string) =>
     window.open(
@@ -12,7 +12,7 @@ export default function Content() {
   return (
     <div className="w-full h-full fixed -z-[2] grid place-items-center left-0 bg-black bg-opacity-60 text-white">
       <div className="flex flex-col items-center gap-2 mb-32 sm:mx-2">
-        <img src="/assets/logotext.png" alt="Onlynudes Text Logo" />
+        <Image src="/assets/logotext.png" alt="Onlynudes Text Logo" />
         <h1 className="text-3xl font-bold sm:text-center xsm:text-2xl">
           The Most Interactive NSFW Discord Bot
         </h1>
